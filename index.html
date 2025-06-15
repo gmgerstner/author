@@ -1,8 +1,429 @@
-<html>
-  <head>
-    <title>Proof Of Concept</title>
-  </head>
-  <body>
-    Canary is alive!
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Author</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 30px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .section h2 {
+            color: #764ba2;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: scale(1.05);
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .book-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .book-year {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hero-content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/200x200/667eea/ffffff?text=Your+Photo" alt="Author Photo" class="profile-image">
+                <h1>Your Name</h1>
+                <p class="subtitle">Award-Winning Author & Storyteller</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p>Welcome to my literary world! I'm a passionate storyteller with over [X] years of experience crafting narratives that captivate and inspire readers around the globe.</p>
+                <p>My journey began with a simple love for words and has evolved into a career dedicated to exploring the human condition through fiction. When I'm not writing, you can find me reading voraciously, traveling to new places for inspiration, or spending time with my family.</p>
+                <p>I believe that stories have the power to change hearts and minds, and I strive to create characters and worlds that resonate long after the final page is turned.</p>
+            </section>
+
+            <section class="section">
+                <h2>Latest News</h2>
+                <div style="border-left: 4px solid #667eea; padding-left: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #764ba2; margin-bottom: 10px;">New Book Release!</h3>
+                    <p style="margin-bottom: 10px;"><strong>Date:</strong> [Release Date]</p>
+                    <p>I'm thrilled to announce the release of my latest novel, "[Book Title]". This story explores themes of love, loss, and redemption in a way I've never attempted before.</p>
+                </div>
+                <div style="border-left: 4px solid #667eea; padding-left: 20px;">
+                    <h3 style="color: #764ba2; margin-bottom: 10px;">Upcoming Events</h3>
+                    <p style="margin-bottom: 10px;"><strong>Book Signing:</strong> [Date] at [Location]</p>
+                    <p><strong>Virtual Reading:</strong> [Date] - Join me online for a special reading and Q&A session.</p>
+                </div>
+            </section>
+
+            <section class="section full-width">
+                <h2>My Books</h2>
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover">Your Latest Book Title</div>
+                        <div class="book-title">Your Latest Book</div>
+                        <div class="book-year">2024</div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-cover">Second Book Title Here</div>
+                        <div class="book-title">Second Book</div>
+                        <div class="book-year">2023</div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-cover">First Book Title</div>
+                        <div class="book-title">Debut Novel</div>
+                        <div class="book-year">2022</div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-cover">Short Story Collection</div>
+                        <div class="book-title">Story Collection</div>
+                        <div class="book-year">2021</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Awards & Recognition</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <strong style="color: #764ba2;">Literary Award Name</strong><br>
+                        <span style="color: #666;">Best Fiction, 2024</span>
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <strong style="color: #764ba2;">Writing Competition</strong><br>
+                        <span style="color: #666;">First Place, 2023</span>
+                    </li>
+                    <li style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <strong style="color: #764ba2;">Readers Choice Award</strong><br>
+                        <span style="color: #666;">Favorite New Author, 2022</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>What Readers Say</h2>
+                <blockquote style="border-left: 4px solid #667eea; padding-left: 20px; margin-bottom: 20px; font-style: italic; color: #555;">
+                    "An absolutely captivating read that kept me turning pages late into the night. The characters felt so real I forgot I was reading fiction."
+                    <footer style="margin-top: 10px; font-weight: bold; color: #764ba2;">— Reader Review</footer>
+                </blockquote>
+                <blockquote style="border-left: 4px solid #667eea; padding-left: 20px; font-style: italic; color: #555;">
+                    "This author has a gift for weaving complex emotions into beautiful prose. Every book is a journey worth taking."
+                    <footer style="margin-top: 10px; font-weight: bold; color: #764ba2;">— Goodreads Review</footer>
+                </blockquote>
+            </section>
+
+            <section class="section full-width">
+                <h2>Get In Touch</h2>
+                <p style="text-align: center; margin-bottom: 30px;">I love hearing from readers! Whether you want to share your thoughts on my books, invite me to an event, or just say hello, I'd love to connect with you.</p>
+                
+                <form class="contact-form" action="#" method="POST">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Goodreads</a>
+                    <a href="#" class="social-link">Amazon</a>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Your Name. All rights reserved. | Website hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scrolling and form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handling (you'll need to integrate with a form service)
+            const contactForm = document.querySelector('.contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I\'ll get back to you soon. (Note: Connect this form to a service like Formspree or Netlify Forms for actual functionality)');
+            });
+
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
 </html>
