@@ -3,268 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Author</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 0;
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        .hero-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            margin: 0 auto 30px;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            font-style: italic;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .section {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .section h2 {
-            color: #764ba2;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .book-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .book-card:hover {
-            transform: scale(1.05);
-        }
-
-        .book-cover {
-            width: 120px;
-            height: 180px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .book-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .book-year {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .social-link {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .submit-btn {
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: rgba(255, 255, 255, 0.8);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .hero-content {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <title>George M. Gerstner - Author</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="hero-content">
-                <img src="https://via.placeholder.com/200x200/667eea/ffffff?text=Your+Photo" alt="Author Photo" class="profile-image">
-                <h1>Your Name</h1>
-                <p class="subtitle">Award-Winning Author & Storyteller</p>
+                <img src="author.png" alt="Author Photo" class="profile-image">
+                <h1>George M. Gerstner</h1>
+                <p class="subtitle">Science Fiction Storyteller</p>
             </div>
         </header>
 
         <div class="main-content">
             <section class="section">
                 <h2>About Me</h2>
-                <p>Welcome to my literary world! I'm a passionate storyteller with over [X] years of experience crafting narratives that captivate and inspire readers around the globe.</p>
-                <p>My journey began with a simple love for words and has evolved into a career dedicated to exploring the human condition through fiction. When I'm not writing, you can find me reading voraciously, traveling to new places for inspiration, or spending time with my family.</p>
-                <p>I believe that stories have the power to change hearts and minds, and I strive to create characters and worlds that resonate long after the final page is turned.</p>
+                <p>Welcome to my literary world! I'm a passionate storyteller with the goal of captivating and inspiring readers around the globe.</p>
+                <p>My journey began with the idea of an imaginary planet and has evolved into a rich set of stories. When I'm not writing, you can find me tinkering with computers or playing tabletop role-playing games.</p>
+                <p>I strive to create characters and worlds that resonate long after the final page is turned.</p>
             </section>
 
             <section class="section">
@@ -302,11 +59,11 @@
                     </div>
                 </div>
                 <p style="text-align: center; margin-top: 30px; font-style: italic; color: #666;">
-                    Follow the complete journey of The Sentinel Series - an epic trilogy exploring duty, sacrifice, and the price of protection.
+                    Follow the complete journey of The Sentinel Series - an epic trilogy exploring duty, sacrifice, and loyalty.
                 </p>
             </section>
 
-            <section class="section full-width">
+            <!-- <section class="section full-width">
                 <h2>What Readers Say</h2>
                 <blockquote style="border-left: 4px solid #667eea; padding-left: 20px; margin-bottom: 20px; font-style: italic; color: #555;">
                     "Sentinel's Dilemma kept me on the edge of my seat from start to finish. The moral complexity of the protagonist's choices made for compelling reading."
@@ -316,9 +73,9 @@
                     "Can't wait for the next book in The Sentinel Series. This author has created a world I want to keep exploring."
                     <footer style="margin-top: 10px; font-weight: bold; color: #764ba2;">— Beta Reader</footer>
                 </blockquote>
-            </section>
+            </section> -->
 
-            <!--section class="section full-width">
+            <!-- <section class="section full-width">
                 <h2>Get In Touch</h2>
                 <p style="text-align: center; margin-bottom: 30px;">I love hearing from readers! Whether you want to share your thoughts on my books, invite me to an event, or just say hello, I'd love to connect with you.</p>
                 
@@ -350,61 +107,14 @@
                     <a href="#" class="social-link">Goodreads</a>
                     <a href="#" class="social-link">Amazon</a>
                 </div>
-        </section -->
+            </section> -->
         </div>
 
         <footer>
-            <p>&copy; 2025 Your Name. All rights reserved. | Website hosted on GitHub Pages</p>
+            <p>&copy; 2025 George M. Gerstner. All rights reserved. | Website hosted on GitHub Pages</p>
         </footer>
     </div>
 
-    <script>
-        // Add smooth scrolling and form handling
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Form submission handling (you'll need to integrate with a form service)
-            const contactForm = document.querySelector('.contact-form');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! I\'ll get back to you soon. (Note: Connect this form to a service like Formspree or Netlify Forms for actual functionality)');
-            });
-
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all sections for scroll animations
-            document.querySelectorAll('.section').forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
