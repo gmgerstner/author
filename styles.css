@@ -88,6 +88,10 @@ h1 {
     padding-bottom: 10px;
 }
 
+.section p {
+    margin-bottom: 5px;
+}
+
 .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
