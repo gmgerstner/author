@@ -8,7 +8,7 @@
         "title": "Sentinel's Dilemma",
         "year": "2025",
         "status": "Available Now",
-        "coverImage": "/cover-dilemma.png",
+        "coverImage": "cover-dilemma.png",
         "isAvailable": true,
         "description": "The first book in The Sentinel Series is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
       },
@@ -17,7 +17,7 @@
         "title": "Sentinel's Return", 
         "year": "2026",
         "status": "Coming Soon",
-        "coverImage": "/cover-return.png",
+        "coverImage": "cover-return.png",
         "isAvailable": false
       },
       {
@@ -25,7 +25,7 @@
         "title": "Sentinel's Crisis",
         "year": "2027", 
         "status": "Coming Soon",
-        "coverImage": "/cover-crisis.png",
+        "coverImage": "cover-crisis.png",
         "isAvailable": false,
         "description": "The epic conclusion to The Sentinel Series will test everything our characters hold dear."
       }
