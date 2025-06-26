@@ -1,0 +1,34 @@
+{
+  "series": {
+    "name": "The Sentinel Series",
+    "description": "Follow the complete journey of The Sentinel Series - an epic trilogy exploring duty, sacrifice, and loyalty.",
+    "books": [
+      {
+        "id": "sentinels-dilemma",
+        "title": "Sentinel's Dilemma",
+        "year": "2025",
+        "status": "Available Now",
+        "coverImage": "/cover-dilemma.png",
+        "isAvailable": true,
+        "description": "The first book in The Sentinel Series is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
+      },
+      {
+        "id": "sentinels-return",
+        "title": "Sentinel's Return", 
+        "year": "2026",
+        "status": "Coming Soon",
+        "coverImage": "/cover-return.png",
+        "isAvailable": false
+      },
+      {
+        "id": "sentinels-crisis",
+        "title": "Sentinel's Crisis",
+        "year": "2027", 
+        "status": "Coming Soon",
+        "coverImage": "/cover-crisis.png",
+        "isAvailable": false,
+        "description": "The epic conclusion to The Sentinel Series will test everything our characters hold dear."
+      }
+    ]
+  }
+}

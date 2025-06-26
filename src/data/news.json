@@ -1,0 +1,28 @@
+{
+  "newsItems": [
+    {
+      "id": "sentinels-dilemma-available",
+      "title": "Sentinel's Dilemma Now Available!",
+      "date": "September 2025",
+      "type": "release",
+      "content": "The first book in The Sentinel Series is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.",
+      "highlight": true
+    },
+    {
+      "id": "series-continues",
+      "title": "The Series Continues",
+      "type": "announcement",
+      "content": "The epic conclusion to The Sentinel Series will test everything our characters hold dear.",
+      "upcomingReleases": [
+        {
+          "title": "Sentinel's Return",
+          "date": "Coming 2026"
+        },
+        {
+          "title": "Sentinel's Crisis", 
+          "date": "Coming 2027"
+        }
+      ]
+    }
+  ]
+}
