@@ -92,14 +92,32 @@ function App() {
                         {booksData.series.books.map((book) => (
                             <div key={book.id} className={`book-card ${!book.isAvailable ? 'coming-soon' : ''}`}>
                                 <div className="book-cover">
-                                    <img
-                                        src={book.coverImage}
-                                        alt={`${book.title} book cover`}
-                                        onError={(e) => {
-                                            e.target.parentElement.classList.add('placeholder');
-                                            e.target.parentElement.innerHTML = book.title;
-                                        }}
-                                    />
+                                    {book.url ? (
+                                        <a
+                                            href={book.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{ display: 'block' }}
+                                        >
+                                            <img
+                                                src={book.coverImage}
+                                                alt={`${book.title} book cover`}
+                                                onError={(e) => {
+                                                    e.target.parentElement.classList.add('placeholder');
+                                                    e.target.parentElement.innerHTML = book.title;
+                                                }}
+                                            />
+                                        </a>
+                                    ) : (
+                                        <img
+                                            src={book.coverImage}
+                                            alt={`${book.title} book cover`}
+                                            onError={(e) => {
+                                                e.target.parentElement.classList.add('placeholder');
+                                                e.target.parentElement.innerHTML = book.title;
+                                            }}
+                                        />
+                                    )}
                                 </div>
                                 <div className="book-title">{book.title}</div>
                                 <div className="book-year">{book.year} - {book.status}</div>
