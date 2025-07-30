@@ -184,7 +184,7 @@ function App() {
             </div>
 
             <footer>
-                <p>&copy; 2025 {authorData.name}. All rights reserved.</p>
+                <p>&copy; 2025 {authorData.name}. All rights reserved. Contact the author at gmgerstner@gmail.com</p>
             </footer>
         </div>
     );
