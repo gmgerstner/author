@@ -1,7 +1,7 @@
 {
   "series": {
     "name": "The Sentinel Trilogy",
-    "description": "Follow the complete journey of The Sentinel Series - an epic trilogy exploring duty, sacrifice, and loyalty.",
+    "description": "Follow the complete journey of The Sentinel Trilogy - an epic series exploring duty, sacrifice, and loyalty.",
     "books": [
       {
         "id": "sentinels-dilemma",
@@ -11,7 +11,7 @@
         "coverImage": "cover-dilemma.jpg",
         "isAvailable": true,
         "url": "https://www.amazon.com/dp/B0FJW14Z9H?ref_=pe_93986420_775043100",
-        "description": "The first book in The Sentinel Series is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
+        "description": "The first book in The Sentinel Trilogy is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
       },
       {
         "id": "sentinels-return",
@@ -28,7 +28,7 @@
         "status": "Coming Soon",
         "coverImage": "cover-crisis.png",
         "isAvailable": false,
-        "description": "The epic conclusion to The Sentinel Series will test everything our characters hold dear."
+        "description": "The epic conclusion to The Sentinel Trilogy will test everything our characters hold dear."
       }
     ]
   }
