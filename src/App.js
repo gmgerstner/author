@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import './App.css';
 import authorData from './data/author.json';
 import Home from './components/Home';
@@ -34,7 +34,7 @@ function App() {
         <div className="container">
             <header>
                 <div className="hero-content">
-                    <img src={authorData.profileImage} alt="George M. Gerstner" className="profile-image" />
+                    <img src={`${process.env.PUBLIC_URL}/${authorData.profileImage}`} alt="George M. Gerstner" className="profile-image" />
                     <h1>{authorData.name}</h1>
                     <p className="subtitle">{authorData.title}</p>
                 </div>
@@ -42,7 +42,10 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Navigate to="/" replace />} />
                 <Route path="/contact" element={<Contact />} />
+                {/* Catch all route - redirect to home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
             <div className="navigation-links" style={{ 

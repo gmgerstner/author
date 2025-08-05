@@ -73,7 +73,7 @@ function Home() {
                                         style={{ display: 'block' }}
                                     >
                                         <img
-                                            src={book.coverImage}
+                                            src={`${process.env.PUBLIC_URL}/${book.coverImage}`}
                                             alt={`${book.title} book cover`}
                                             onError={(e) => {
                                                 e.target.parentElement.classList.add('placeholder');
@@ -83,7 +83,7 @@ function Home() {
                                     </a>
                                 ) : (
                                     <img
-                                        src={book.coverImage}
+                                        src={`${process.env.PUBLIC_URL}/${book.coverImage}`}
                                         alt={`${book.title} book cover`}
                                         onError={(e) => {
                                             e.target.parentElement.classList.add('placeholder');
