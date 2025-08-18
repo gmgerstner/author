@@ -10,7 +10,18 @@
   "socialLinks": [
     {
       "name": "Amazon",
-      "url": "https://www.amazon.com/stores/George-Gerstner/author/B0FK1VRXM7"
+      "url": "https://www.amazon.com/stores/George-Gerstner/author/B0FK1VRXM7",
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/amazon.svg"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/people/George-M-Gerstner-Author/61577596566596/",
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/facebook.svg"
+    },
+    {
+      "name": "Goodreads",
+      "url": "https://www.goodreads.com/author/show/57955996.George_Gerstner",
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/goodreads.svg"
     }
   ]
 }
