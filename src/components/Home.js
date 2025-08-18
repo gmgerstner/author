@@ -49,7 +49,7 @@ function Home() {
                     <div key={newsItem.id} style={{ borderLeft: '4px solid #667eea', paddingLeft: '20px', marginBottom: '20px' }}>
                         <h3 style={{ color: '#764ba2', marginBottom: '10px' }}>{newsItem.title}</h3>
                         {newsItem.date && (
-                            <p style={{ marginBottom: '10px' }}><strong>Expected Release:</strong> {newsItem.date}</p>
+                            <p style={{ marginBottom: '10px' }}><strong>Release Date:</strong> {newsItem.date}</p>
                         )}
                         <p>{newsItem.content}</p>
                         {newsItem.upcomingReleases && newsItem.upcomingReleases.map((release, index) => (
