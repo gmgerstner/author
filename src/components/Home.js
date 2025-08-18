@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import authorData from '../data/author.json';
 import booksData from '../data/books.json';
 import newsData from '../data/news.json';
@@ -46,15 +47,27 @@ function Home() {
             <section className="section">
                 <h2>Latest News</h2>
                 {newsData.newsItems.map((newsItem) => (
-                    <div key={newsItem.id} style={{ borderLeft: '4px solid #667eea', paddingLeft: '20px', marginBottom: '20px' }}>
-                        <h3 style={{ color: '#764ba2', marginBottom: '10px' }}>{newsItem.title}</h3>
+                    <div key={newsItem.id} style={{ 
+                        borderLeft: '4px solid #667eea', 
+                        paddingLeft: '20px', 
+                        marginBottom: '20px' 
+                    }}>
+                        <h3 style={{ color: '#764ba2', marginBottom: '10px' }}>
+                            {newsItem.title}
+                        </h3>
                         {newsItem.date && (
-                            <p style={{ marginBottom: '10px' }}><strong>Release Date:</strong> {newsItem.date}</p>
+                            <p style={{ 
+                                marginBottom: '10px', 
+                                fontSize: '0.9rem', 
+                                color: '#666',
+                                fontStyle: 'italic'
+                            }}>
+                                {newsItem.date}
+                            </p>
                         )}
-                        <p>{newsItem.content}</p>
-                        {newsItem.upcomingReleases && newsItem.upcomingReleases.map((release, index) => (
-                            <p key={index}><strong>{release.title}:</strong> {release.date}</p>
-                        ))}
+                        <div className="markdown-content">
+                            <ReactMarkdown>{newsItem.content}</ReactMarkdown>
+                        </div>
                     </div>
                 ))}
             </section>

@@ -5,24 +5,14 @@
       "title": "Sentinel's Dilemma Now Available!",
       "date": "September 2nd, 2025",
       "type": "release",
-      "content": "The first book in The Sentinel Trilogy is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.",
+      "content": "The first book in **The Sentinel Trilogy** is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.\n\n[Get it on Amazon](https://www.amazon.com/dp/B0FJW14Z9H).",
       "highlight": true
     },
     {
       "id": "series-continues",
       "title": "The Trilogy Continues",
       "type": "announcement",
-      "content": "The epic conclusion to The Sentinel Trilogy will test everything our characters hold dear.",
-      "upcomingReleases": [
-        {
-          "title": "Sentinel's Return",
-          "date": "Coming 2026"
-        },
-        {
-          "title": "Sentinel's Crisis", 
-          "date": "Coming 2027"
-        }
-      ]
+      "content": "The epic follow-ups to **The Sentinel Trilogy** will test everything our characters hold dear.\n\n### Upcoming Releases:\n\n- **Sentinel's Return** - Coming 2026\n- **Sentinel's Crisis** - Coming 2027\n\nStay tuned for more updates and exclusive previews!"
     }
   ]
 }
