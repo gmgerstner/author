@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import authorData from '../data/author.json';
-import booksData from '../data/books.json';
-import newsData from '../data/news.json';
+import authorData from './data/author.json';
+import booksData from './data/books.json';
+import newsData from './data/news.json';
+import testimonialsData from './data/testimonials.json';
 
 function Home() {
     useEffect(() => {
@@ -169,6 +170,23 @@ function Home() {
                 <p style={{ textAlign: 'center', marginTop: '30px', fontStyle: 'italic', color: '#666' }}>
                     {booksData.series.description}
                 </p>
+            </section>
+
+            {/* Only add testimonials section - everything else stays the same */}
+            <section className="section full-width">
+                <h2>What Readers Are Saying</h2>
+                <div className="testimonials-grid">
+                    {testimonialsData.testimonials.map((testimonial) => (
+                        <div key={testimonial.id} className="testimonial-card">
+                            <div className="testimonial-quote">
+                                "{testimonial.quote}"
+                            </div>
+                            <div className="testimonial-author">
+                                — {testimonial.author}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
         </div>
     );
