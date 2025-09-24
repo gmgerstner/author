@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import authorData from './data/author.json';
-import booksData from './data/books.json';
-import newsData from './data/news.json';
-import testimonialsData from './data/testimonials.json';
+import authorData from '../data/author.json';
+import booksData from '../data/books.json';
+import newsData from '../data/news.json';
+import testimonialsData from '../data/testimonials.json';
 
 function Home() {
     useEffect(() => {
