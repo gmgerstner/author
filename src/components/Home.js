@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import AboutMe from './AboutMe';
-import EmailSignup from './EmailSignup';
 import LatestNews from './LatestNews';
 import BookSeries from './BookSeries';
 import Testimonials from './Testimonials';
@@ -40,7 +39,6 @@ function Home() {
         <div className="main-content">
             <section className="section"><AboutMe /></section>
             <section className="section"><LatestNews /></section>
-            <section className="section"><EmailSignup /></section>
             <section className="section full-width"><BookSeries /></section>
             <section className="section full-width"><Testimonials /></section>
         </div>

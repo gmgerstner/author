@@ -1,5 +1,6 @@
 import React from 'react';
 import authorData from '../data/author.json';
+import EmailSignup from './EmailSignup';
 
 function AboutMe() {
     return (
@@ -8,6 +9,7 @@ function AboutMe() {
             {authorData.bio.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
             ))}
+            <EmailSignup />
         </div>
     );
 }
