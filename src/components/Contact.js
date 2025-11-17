@@ -31,7 +31,7 @@ export default function Contact() {
       <section className="section full-width">
         <h2>Get In Touch</h2>
         <p style={{textAlign: 'center', marginBottom: '30px'}}>
-          I love hearing from readers! Whether you want to share your thoughts on my books, invite me to an event, or just say hello, I'd love to connect with you.
+          I love hearing from readers! Whether you want to share your thoughts on my books, ask me a question, invite me to an event, or just say hello, I'd love to connect with you.
         </p>
         
         <form className="contact-form" onSubmit={onSubmit}>
