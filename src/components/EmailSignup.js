@@ -12,6 +12,9 @@ function EmailSignup() {
         setStatus('');
 
         try {
+                
+            formData.append("access_key", "07d6b20c-ec3c-4492-b405-bb9c75fa4178");
+
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
