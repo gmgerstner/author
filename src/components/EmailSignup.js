@@ -41,7 +41,7 @@ function EmailSignup() {
     };
 
     return (
-        <section className="section email-signup">
+        <div>
             <h2>Stay Connected</h2>
             <p style={{ marginBottom: '20px', color: '#555' }}>
                 Sign up to receive news, updates, and exclusive opportunities including ARC (Advanced Reader Copy) access to upcoming releases.
@@ -133,7 +133,9 @@ function EmailSignup() {
             }}>
                 We respect your privacy. Unsubscribe at any time.
             </p>
-        </section>
+
+            <SocialLinks />
+        </div>
     );
 }
 

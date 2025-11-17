@@ -3,7 +3,7 @@ import testimonialsData from '../data/testimonials.json';
 
 function Testimonials() {
     return (
-        <section className="section full-width">
+        <div>
             <h2>What Readers Are Saying</h2>
             <div className="testimonials-grid">
                 {testimonialsData.testimonials.map((testimonial) => (
@@ -17,7 +17,7 @@ function Testimonials() {
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }
 

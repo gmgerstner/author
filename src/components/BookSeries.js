@@ -3,7 +3,7 @@ import booksData from '../data/books.json';
 
 function BookSeries() {
     return (
-        <section className="section full-width">
+        <div>
             <h2>{booksData.series.name}</h2>
             <div className="book-grid">
                 {booksData.series.books.map((book) => (
@@ -44,7 +44,7 @@ function BookSeries() {
             <p style={{ textAlign: 'center', marginTop: '30px', fontStyle: 'italic', color: '#666' }}>
                 {booksData.series.description}
             </p>
-        </section>
+        </div>
     );
 }
 

@@ -4,7 +4,7 @@ import newsData from '../data/news.json';
 
 function LatestNews() {
     return (
-        <section className="section">
+        <div>
             <h2>Latest News</h2>
             {newsData.newsItems.map((newsItem) => (
                 <div key={newsItem.id} style={{ 
@@ -30,7 +30,7 @@ function LatestNews() {
                     </div>
                 </div>
             ))}
-        </section>
+        </div>
     );
 }
 

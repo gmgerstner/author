@@ -39,12 +39,11 @@ function Home() {
 
     return (
         <div className="main-content">
-            <AboutMe />
-            <LatestNews />
-            <EmailSignup />
-            <SocialLinks />
-            <BookSeries />
-            <Testimonials />
+            <section className="section"><AboutMe /></section>
+            <section className="section"><LatestNews /></section>
+            <section className="section"><EmailSignup /></section>
+            <section className="section full-width"><BookSeries /></section>
+            <section className="section full-width"><Testimonials /></section>
         </div>
     );
 }

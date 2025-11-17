@@ -3,8 +3,7 @@ import authorData from '../data/author.json';
 
 function SocialLinks() {
     return (
-        <section className="section social-links-section">
-            <h2>Connect With Me</h2>
+        <div>
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'center', 
@@ -59,7 +58,7 @@ function SocialLinks() {
                     </a>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }
 
