@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import AboutMe from './AboutMe';
 import EmailSignup from './EmailSignup';
-import SocialLinks from './SocialLinks';
 import LatestNews from './LatestNews';
 import BookSeries from './BookSeries';
 import Testimonials from './Testimonials';

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SocialLinks from './SocialLinks';
 
 function EmailSignup() {
     const [email, setEmail] = useState('');
