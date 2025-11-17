@@ -31,7 +31,9 @@ export default function Contact() {
       <section className="section full-width">
         <h2>Get In Touch</h2>
         <p style={{textAlign: 'center', marginBottom: '30px'}}>
-          I love hearing from readers! Whether you want to share your thoughts on my books, ask me a question, invite me to an event, or just say hello, I'd love to connect with you.
+          I love hearing from readers! Whether you want to share your thoughts on my books, 
+          ask me a question, invite me to an event, or just say hello, I'd love to connect 
+          with you.
         </p>
         
         <form className="contact-form" onSubmit={onSubmit}>
@@ -53,7 +55,6 @@ export default function Contact() {
             <label htmlFor="message">Your Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <input type="hidden">Source: Author Contact Page</input>
           <button type="submit" className="submit-btn">Send Message</button>
         </form>
 
