@@ -12,16 +12,13 @@ function EmailSignup() {
         setStatus('');
 
         try {
-                
-            formData.append("access_key", "07d6b20c-ec3c-4492-b405-bb9c75fa4178");
-
-            const response = await fetch('https://api.web3forms.com/submit', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: 'a5b74476-cecc-4cec-8aea-13c5ccd98f1b',
+                    access_key: '07d6b20c-ec3c-4492-b405-bb9c75fa4178',
                     subject: 'New Newsletter Signup',
                     from_name: 'Author Website Newsletter',
                     email: email,
