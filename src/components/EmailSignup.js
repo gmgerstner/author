@@ -18,7 +18,7 @@ function EmailSignup() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: '07d6b20c-ec3c-4492-b405-bb9c75fa4178',
+                    access_key: '3df89f65-f039-4d24-bc1f-2f2c87f85be4',
                     subject: 'New Newsletter Signup',
                     from_name: 'Author Website Newsletter',
                     email: email,
