@@ -19,6 +19,11 @@
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/facebook.svg"
     },
     {
+      "name": "Bookbub",
+      "url": "https://www.bookbub.com/authors/george-m-gerstner?follow=true",
+      "icon": "../public/BB 64x64.png"
+    },
+    {
       "name": "Goodreads",
       "url": "https://www.goodreads.com/author/show/57955996.George_Gerstner",
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/goodreads.svg"
