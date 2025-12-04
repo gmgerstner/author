@@ -49,7 +49,7 @@ function SocialLinks() {
                                 style={{ 
                                     width: '24px', 
                                     height: '24px',
-                                    filter: 'brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(665%) hue-rotate(314deg) brightness(99%) contrast(94%)',
+                                    //filter: 'brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(665%) hue-rotate(314deg) brightness(99%) contrast(94%)',
                                     transition: 'all 0.3s ease',
                                     pointerEvents: 'none'
                                 }}
