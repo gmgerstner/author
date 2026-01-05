@@ -1,12 +1,18 @@
 {
   "newsItems": [
     {
+      "id": "sentinels-return-draft",
+      "title": "Sentinel's Return Draft Done",
+      "type": "announcement",
+      "content": "The draft for the second book in **The Sentinel Trilogy** is complete! It is currently getting edited.\n\n[Catch up and read book 1 while you wait](https://www.amazon.com/dp/B0FJW14Z9H).",
+      "highlight": true
+    },
+    {
       "id": "sentinels-dilemma-available",
       "title": "Sentinel's Dilemma Now Available!",
       "date": "Released: September 2nd, 2025",
       "type": "release",
-      "content": "The first book in **The Sentinel Trilogy** is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.\n\n[Get it on Amazon](https://www.amazon.com/dp/B0FJW14Z9H).",
-      "highlight": true
+      "content": "The first book in **The Sentinel Trilogy** is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.\n\n[Get it on Amazon](https://www.amazon.com/dp/B0FJW14Z9H)."
     },
     {
       "id": "series-continues",
