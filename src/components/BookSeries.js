@@ -36,8 +36,33 @@ function BookSeries() {
                                 />
                             )}
                         </div>
-                        <div className="book-title">{book.title}</div>
-                        <div className="book-year">{book.year} - {book.status}</div>
+                        <div className="book-info">
+                            <div className="book-title">{book.title}</div>
+                            <div className="book-year">{book.year} - {book.status}</div>
+                            
+                            {/* CTA Button */}
+                            {book.isAvailable && book.url ? (
+                                <a
+                                    href={book.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="buy-button"
+                                >
+                                    Buy Now
+                                </a>
+                            ) : book.url ? (
+                                <a
+                                    href={book.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="buy-button preorder-button"
+                                >
+                                    Pre-order
+                                </a>
+                            ) : (
+                                <div className="coming-soon-label">Coming Soon</div>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
