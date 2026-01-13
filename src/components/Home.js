@@ -37,9 +37,9 @@ function Home() {
 
     return (
         <div className="main-content">
+            <section className="section full-width"><BookSeries /></section>
             <section className="section"><AboutMe /></section>
             <section className="section"><LatestNews /></section>
-            <section className="section full-width"><BookSeries /></section>
             <section className="section full-width"><Testimonials /></section>
         </div>
     );
