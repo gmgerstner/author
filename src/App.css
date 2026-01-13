@@ -424,3 +424,76 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* Book Series CTA Button Styles */
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.buy-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.buy-button:active {
+  transform: translateY(-1px);
+}
+
+.preorder-button {
+  background: linear-gradient(135deg, #8b9dc3 0%, #9b7ba9 100%);
+  box-shadow: 0 4px 15px rgba(139, 157, 195, 0.3);
+}
+
+.preorder-button:hover {
+  background: linear-gradient(135deg, #9b7ba9 0%, #8b9dc3 100%);
+  box-shadow: 0 8px 25px rgba(139, 157, 195, 0.4);
+}
+
+.coming-soon-label {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #e0e0e0 0%, #c3cfe2 100%);
+  color: #666;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 25px;
+  margin-top: 12px;
+  cursor: default;
+  opacity: 0.8;
+}
+
+/* Optional: Enhance book card hover to show CTA is clickable */
+.book-card:hover .buy-button {
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive adjustments for CTAs */
+@media (max-width: 768px) {
+  .buy-button,
+  .preorder-button,
+  .coming-soon-label {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
