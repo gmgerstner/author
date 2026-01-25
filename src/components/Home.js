@@ -3,6 +3,8 @@ import AboutMe from './AboutMe';
 import LatestNews from './LatestNews';
 import BookSeries from './BookSeries';
 import Testimonials from './Testimonials';
+import SocialLinks from './SocialLinks';
+import EmailSignup from './EmailSignup';
 
 function Home() {
     useEffect(() => {
@@ -38,8 +40,10 @@ function Home() {
     return (
         <div className="main-content">
             <section className="section full-width"><BookSeries /></section>
-            <section className="section"><AboutMe /></section>
-            <section className="section"><LatestNews /></section>
+            <section className="section full-width"><LatestNews /></section>
+            <section className="section full-width"><AboutMe /></section>
+            <section className="section full-width"><EmailSignup /></section>
+            <section className="section full-width"><SocialLinks /></section>
             <section className="section full-width"><Testimonials /></section>
         </div>
     );

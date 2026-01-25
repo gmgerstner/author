@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SocialLinks from './SocialLinks';
 
 function EmailSignup() {
     const [email, setEmail] = useState('');
@@ -126,16 +125,14 @@ function EmailSignup() {
                 )}
             </form>
 
-            <p style={{ 
-                marginTop: '15px', 
-                fontSize: '0.85rem', 
+            <p style={{
+                marginTop: '15px',
+                fontSize: '0.85rem',
                 color: '#999',
                 textAlign: 'center'
             }}>
                 We respect your privacy. Unsubscribe at any time.
             </p>
-
-            <SocialLinks />
         </div>
     );
 }
