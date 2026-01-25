@@ -21,7 +21,7 @@
     {
       "name": "Bookbub",
       "url": "https://www.bookbub.com/authors/george-m-gerstner?follow=true",
-      "icon": "https://github.com/cdnjs/cdnjs/blob/master/ajax/libs/simple-icons/9.15.0/bookbub.svg"
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/bookbub.svg"
     },
     {
       "name": "Goodreads",
