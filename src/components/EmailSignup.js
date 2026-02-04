@@ -19,7 +19,7 @@ function EmailSignup() {
                 },
                 body: JSON.stringify({
                     access_key: '3df89f65-f039-4d24-bc1f-2f2c87f85be4',
-                    subject: 'New Newsletter Signup',
+                    subject: 'New Book Release Notification Signup',
                     from_name: 'Author Website Newsletter',
                     email: email,
                     message: 'New newsletter signup request'
@@ -43,9 +43,9 @@ function EmailSignup() {
 
     return (
         <div>
-            <h2>Stay Connected</h2>
+            <h2>Get Notified</h2>
             <p style={{ marginBottom: '20px', color: '#555' }}>
-                Sign up to receive news, updates, and exclusive opportunities including ARC (Advanced Reader Copy) access to upcoming releases.
+                Be the first to know ehen new books are available! Sign up to get notified about future releases and eclusive updates.
             </p>
             
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
@@ -95,7 +95,7 @@ function EmailSignup() {
                             e.target.style.boxShadow = 'none';
                         }}
                     >
-                        {loading ? 'Signing up...' : 'Sign Up'}
+                        {loading ? 'Subscribing...' : 'Notify Me'}
                     </button>
                 </div>
 
@@ -108,7 +108,7 @@ function EmailSignup() {
                         border: '1px solid #c3e6cb',
                         textAlign: 'center'
                     }}>
-                        Thank you for signing up! Check your email for confirmation.
+                        You're on th elist. We'll nofity you when new books become available.
                     </div>
                 )}
 
