@@ -45,7 +45,7 @@ function EmailSignup() {
         <div>
             <h2>Get Notified</h2>
             <p style={{ marginBottom: '20px', color: '#555' }}>
-                Be the first to know ehen new books are available! Sign up to get notified about future releases and eclusive updates.
+                Be the first to know when new books are available! Sign up to get notified about future releases and eclusive updates.
             </p>
             
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
