@@ -108,7 +108,7 @@ function EmailSignup() {
                         border: '1px solid #c3e6cb',
                         textAlign: 'center'
                     }}>
-                        You're on th elist. We'll nofity you when new books become available.
+                        You're on the list. We'll nofity you when new books become available.
                     </div>
                 )}
 
