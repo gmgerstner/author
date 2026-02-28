@@ -9,6 +9,17 @@ function App() {
     const location = useLocation();
 
     useEffect(() => {
+        // Inject Kit.com script (guard against StrictMode double-invoke)
+        if (!document.querySelector('script[data-uid="ecbfcc2b2f"]')) {
+            const script = document.createElement('script');
+            script.src = 'https://gmgdigitaltechnologies.kit.com/ecbfcc2b2f/index.js';
+            script.async = true;
+            script.setAttribute('data-uid', 'ecbfcc2b2f');
+            document.body.appendChild(script);
+        }
+    }, []);
+
+    useEffect(() => {
         // Smooth scrolling for anchor links
         const handleAnchorClick = (e) => {
             if (e.target.matches('a[href^="#"]')) {
