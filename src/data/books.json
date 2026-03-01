@@ -1,34 +1,53 @@
 {
   "series": {
     "name": "The Sentinel Trilogy",
-    "description": "Follow the complete journey of The Sentinel Trilogy - an epic series exploring duty, sacrifice, and loyalty.",
+    "description": "Follow the complete journey of The Sentinel Trilogy — an epic science fiction series exploring duty, sacrifice, and loyalty across the stars.",
     "books": [
       {
         "id": "sentinels-dilemma",
         "title": "Sentinel's Dilemma",
+        "number": 1,
         "year": "2025",
         "status": "Available Now!",
         "coverImage": "cover-dilemma.jpg",
         "isAvailable": true,
         "url": "https://www.amazon.com/dp/B0FJW14Z9H",
-        "description": "The first book in The Sentinel Trilogy is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
+        "tagline": "When duty and conscience collide, every choice has a cost.",
+        "description": [
+          "The first book in The Sentinel Trilogy is now available! Join the journey as our protagonist faces impossible choices between duty and conscience.",
+          "In a world where loyalty is currency and betrayal is survival, one sentinel must decide what they truly stand for — even if standing means falling alone. The mission was supposed to be simple. It never is.",
+          "Sentinel's Dilemma launches an unforgettable trilogy that asks the questions that matter most: What do we owe the people who made us? And what do we owe ourselves?"
+        ]
       },
       {
         "id": "sentinels-return",
-        "title": "Sentinel's Return", 
+        "title": "Sentinel's Return",
+        "number": 2,
         "year": "2026",
         "status": "Coming Soon",
         "coverImage": "cover-return.jpg",
-        "isAvailable": false
+        "isAvailable": false,
+        "tagline": "The journey home is never the one you remember.",
+        "description": [
+          "The saga continues. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. The bonds forged in fire will be tested beyond breaking.",
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        ]
       },
       {
         "id": "sentinels-crisis",
         "title": "Sentinel's Crisis",
-        "year": "2027", 
+        "number": 3,
+        "year": "2027",
         "status": "Coming Soon",
         "coverImage": "cover-crisis.png",
         "isAvailable": false,
-        "description": "The epic conclusion to The Sentinel Trilogy will test everything our characters hold dear."
+        "tagline": "All roads lead to one final reckoning.",
+        "description": [
+          "The epic conclusion to The Sentinel Trilogy will test everything our characters hold dear.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. In the end, the greatest sentinel is the one willing to lay down the title entirely."
+        ]
       }
     ]
   }
