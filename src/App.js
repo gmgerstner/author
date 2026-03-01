@@ -25,7 +25,7 @@ function App() {
                     <div className="header-logo">
                         <Link to="/" onClick={closeMenu}>
                             <img
-                                src={`${process.env.PUBLIC_URL}/gmgnovelslogo.png`}
+                                src={`${process.env.PUBLIC_URL}/gmgnovels-logo.png`}
                                 alt="GMG Novels"
                                 className="logo-img"
                                 onError={(e) => {
@@ -148,6 +148,12 @@ function App() {
                     <div className="footer-brand">
                         <Link to="/" className="footer-name">{authorData.name}</Link>
                         <p className="footer-title">{authorData.title}</p>
+                        <img
+                            src={`${process.env.PUBLIC_URL}/gmgnovels-logo.png`}
+                            alt="GMG Novels Logo"
+                            className="footer-logo"
+                            width="150px"
+                        />
                     </div>
 
                     <nav className="footer-nav">
