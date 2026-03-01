@@ -1,34 +1,52 @@
 {
   "series": {
     "name": "The Sentinel Trilogy",
-    "description": "Follow the complete journey of The Sentinel Trilogy - an epic series exploring duty, sacrifice, and loyalty.",
+    "description": "Follow the complete journey of The Sentinel Trilogy — an epic science fiction series exploring duty, sacrifice, and loyalty across the stars.",
     "books": [
       {
         "id": "sentinels-dilemma",
         "title": "Sentinel's Dilemma",
+        "number": 1,
         "year": "2025",
         "status": "Available Now!",
         "coverImage": "cover-dilemma.jpg",
         "isAvailable": true,
         "url": "https://www.amazon.com/dp/B0FJW14Z9H",
-        "description": "The first book in The Sentinel Trilogy is now available! Join the journey as our protagonist faces impossible choices between duty and conscience."
+        "tagline": "When duty and heart collide, every choice has a cost.",
+        "description": [
+          "Sentinel's Dilemma is a science fiction novel told from an alien's perspective.",
+          "When Lieutenant Antel Ralnar is sent to Earth as a covert observer to prepare for first contact, he finds himself caught between his duty to the Rileean Empire and his growing connection to the people he was only meant to study, most notably a graduate student named Becky Miller who accidentally discovers his secret."
+        ]
       },
-      {
+{
         "id": "sentinels-return",
-        "title": "Sentinel's Return", 
+        "title": "Sentinel's Return",
+        "number": 2,
         "year": "2026",
         "status": "Coming Soon",
         "coverImage": "cover-return.jpg",
-        "isAvailable": false
+        "isAvailable": false,
+        "tagline": "First contact may not be successful. They're going to attempt it anyway.",
+        "description": [
+          "Nearly one year after a covert mission to Earth ended in tragedy, Antel Ralnar and Becky Miller return with a new team, this time with Becky serving as Mission Leader at the Emperor's request, to validate Earth's readiness and prepare for formal first contact.",
+          "But the mission unravels quickly. The U.S. military is reverse-engineering technology recovered from the first mission and watching for the aliens to return, while Rileean hardliners back on Arkonus are pushing for a preemptive strike before Earth grows too powerful to stop.",
+          "Caught between threats from both worlds, Antel and Becky find that the greatest danger may be their own growing divide. She is willing to risk everything for the mission to succeed, while he will do whatever it takes to keep her safe."
+        ]
       },
       {
         "id": "sentinels-crisis",
         "title": "Sentinel's Crisis",
-        "year": "2027", 
+        "number": 3,
+        "year": "2027",
         "status": "Coming Soon",
         "coverImage": "cover-crisis.png",
         "isAvailable": false,
-        "description": "The epic conclusion to The Sentinel Trilogy will test everything our characters hold dear."
+        "tagline": "First contact was just the beginning.",
+        "description": [
+          "First contact has been made. The Rilus has departed Earth, and for the first time in history, humanity knows it is not alone in the universe.",
+          "But not everyone welcomes Earth's arrival on the interstellar stage. Old enemies of the Rileean Empire see Earth's emergence not as an opportunity, but as a threat to be contained before it is too late.",
+          "With Earth's alliances still fragile and its defenders untested, Antel and Becky must protect everything they fought to build before those who have been waiting in the shadows finally make their move."
+        ]
       }
     ]
   }

@@ -1,69 +1,198 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom';
 import './App.css';
 import authorData from './data/author.json';
-import Home from './components/Home';
+import booksData from './data/books.json';
+import HomePage from './pages/HomePage';
+import BooksPage from './pages/BooksPage';
+import BookDetailPage from './pages/BookDetailPage';
+import AboutPage from './pages/AboutPage';
 import Contact from './components/Contact';
 
+function ScrollToTop() {
+    const { pathname } = useLocation();
+    useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+    return null;
+}
+
 function App() {
-    const location = useLocation();
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [booksDropOpen, setBooksDropOpen] = useState(false);
 
-    useEffect(() => {
-        // Smooth scrolling for anchor links
-        const handleAnchorClick = (e) => {
-            if (e.target.matches('a[href^="#"]')) {
-                e.preventDefault();
-                const target = document.querySelector(e.target.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        };
-
-        document.addEventListener('click', handleAnchorClick);
-
-        return () => {
-            document.removeEventListener('click', handleAnchorClick);
-        };
-    }, []);
+    const closeMenu = () => setMenuOpen(false);
 
     return (
-        <div className="container">
-            <header>
-                <div className="hero-content">
-                    <img src={`${process.env.PUBLIC_URL}/${authorData.profileImage}`} alt="George M. Gerstner" className="profile-image" />
-                    <h1>{authorData.name}</h1>
-                    <p className="subtitle">{authorData.title}</p>
+        <div className="site-wrapper">
+            {/* ── Header ── */}
+            <header className="site-header">
+                <div className="header-inner">
+
+                    {/* Logo */}
+                    <div className="header-logo">
+                        <Link to="/" onClick={closeMenu}>
+                            <img
+                                src={`${process.env.PUBLIC_URL}/gmgnovels-logo.png`}
+                                alt="GMG Novels"
+                                className="logo-img"
+                                onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'block';
+                                }}
+                            />
+                            <span className="logo-text-fallback" style={{ display: 'none' }}>
+                                GMG Novels
+                            </span>
+                        </Link>
+                    </div>
+
+                    {/* Nav */}
+                    <nav className={`main-nav${menuOpen ? ' nav-open' : ''}`}>
+                        <ul className="nav-list">
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    end
+                                    className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                                    onClick={closeMenu}
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li
+                                className="nav-has-dropdown"
+                                onMouseEnter={() => setBooksDropOpen(true)}
+                                onMouseLeave={() => setBooksDropOpen(false)}
+                            >
+                                <NavLink
+                                    to="/books"
+                                    className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                                    onClick={closeMenu}
+                                >
+                                    Books
+                                </NavLink>
+                                <ul className={`nav-dropdown${booksDropOpen ? ' dropdown-open' : ''}`}>
+                                    {booksData.series.books.map(book => (
+                                        <li key={book.id}>
+                                            <Link
+                                                to={`/books/${book.id}`}
+                                                className="dropdown-link"
+                                                onClick={() => { closeMenu(); setBooksDropOpen(false); }}
+                                            >
+                                                {book.title}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/about"
+                                    className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                                    onClick={closeMenu}
+                                >
+                                    About
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/contact"
+                                    className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                                    onClick={closeMenu}
+                                >
+                                    Contact
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    {/* Social Icons */}
+                    <div className="header-social">
+                        {authorData.socialLinks.map(link => (
+                            <a
+                                key={link.name}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="header-social-link"
+                                title={link.name}
+                            >
+                                <img src={link.icon} alt={link.name} />
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Hamburger */}
+                    <button
+                        className={`hamburger${menuOpen ? ' hamburger-open' : ''}`}
+                        onClick={() => setMenuOpen(o => !o)}
+                        aria-label="Toggle menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
                 </div>
             </header>
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Navigate to="/" replace />} />
-                <Route path="/contact" element={<Contact />} />
-                {/* Catch all route - redirect to home */}
-                <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+            {/* ── Main Content ── */}
+            <ScrollToTop />
+            <main className="site-main">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/books" element={<BooksPage />} />
+                    <Route path="/books/:bookId" element={<BookDetailPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+            </main>
 
-            <div className="navigation-links" style={{ 
-                textAlign: 'center', 
-                margin: '40px 0',
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '20px'
-            }}>
-                {location.pathname === '/' ? (
-                    <Link to="/contact" className="social-link">Contact Me</Link>
-                ) : (
-                    <Link to="/" className="social-link">← Back to Home</Link>
-                )}
-            </div>
+            {/* ── Footer ── */}
+            <footer className="site-footer">
+                <div className="footer-inner">
 
-            <footer>
-                <p>&copy; 2025 {authorData.name}. All rights reserved.</p>
+                    <div className="footer-brand">
+                        <Link to="/" className="footer-name">{authorData.name}</Link>
+                        <p className="footer-title">{authorData.title}</p>
+                        <img
+                            src={`${process.env.PUBLIC_URL}/gmgnovels-logo.png`}
+                            alt="GMG Novels Logo"
+                            className="footer-logo"
+                            width="150px"
+                        />
+                    </div>
+
+                    <nav className="footer-nav">
+                        <Link to="/">Home</Link>
+                        <Link to="/books">Books</Link>
+                        <Link to="/about">About</Link>
+                        <Link to="/contact">Contact</Link>
+                    </nav>
+
+                    <div className="footer-social-section">
+                        <p className="footer-social-heading">Connect with George!</p>
+                        <div className="footer-social-links">
+                            {authorData.socialLinks.map(link => (
+                                <a
+                                    key={link.name}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-social-link"
+                                >
+                                    <img src={link.icon} alt={link.name} />
+                                    <span>{link.name}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="footer-copy">
+                        <p>&copy; 2025 {authorData.name}. All rights reserved.</p>
+                    </div>
+
+                </div>
             </footer>
         </div>
     );
