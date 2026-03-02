@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import booksData from '../data/books.json';
 import testimonialData from '../data/testimonials.json';
-import KitSignup from '../components/KitSignup';
+// import KitSignup from '../components/KitSignup';
 
 function HomePage() {
     const featuredBook = booksData.series.books.find(b => b.isAvailable) || booksData.series.books[0];
@@ -130,11 +130,11 @@ function HomePage() {
             )}
 
             {/* ── Newsletter / Free Story ── */}
-            <section className="newsletter-section">
+            {/* <section className="newsletter-section">
                 <div className="section-inner">
                     <KitSignup />
                 </div>
-            </section>
+            </section> */}
 
         </div>
     );
