@@ -28,6 +28,11 @@
       "name": "Goodreads",
       "url": "https://www.goodreads.com/author/show/57955996.George_Gerstner",
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/goodreads.svg"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/gmgnovels",
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/instagram.svg"
     }
   ]
 }
