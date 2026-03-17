@@ -33,6 +33,10 @@
       "name": "Instagram",
       "url": "https://www.instagram.com/gmgnovels",
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/instagram.svg"
-    }
-  ]
+    },
+    {
+      "name": "Instagram",
+      "url": "https://bsky.app/profile/gmgnovels.bsky.social",
+      "icon": "https://unpkg.com/simple-icons@16.12.0/icons/bluesky.svg"
+    }  ]
 }
