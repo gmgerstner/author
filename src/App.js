@@ -8,6 +8,7 @@ import BooksPage from './pages/BooksPage';
 import BookDetailPage from './pages/BookDetailPage';
 import AboutPage from './pages/AboutPage';
 import Contact from './components/Contact';
+import PrivacyPage from './pages/PrivacyPage';
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -144,6 +145,7 @@ function App() {
                     <Route path="/books/:bookId" element={<BookDetailPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/privacy" element={<PrivacyPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>
@@ -168,6 +170,7 @@ function App() {
                         <Link to="/books">Books</Link>
                         <Link to="/about">About</Link>
                         <Link to="/contact">Contact</Link>
+                        <Link to="/privacy">Privacy</Link>
                     </nav>
 
                     <div className="footer-social-section">

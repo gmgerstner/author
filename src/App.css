@@ -1095,6 +1095,50 @@ img {
 }
 
 /* ============================================================
+   Privacy Page
+   ============================================================ */
+.privacy-content {
+  max-width: 720px;
+}
+
+.privacy-updated {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.privacy-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 36px 0 10px;
+}
+
+.privacy-content p,
+.privacy-content li {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.privacy-content ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.privacy-content li {
+  margin-bottom: 8px;
+}
+
+.privacy-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.privacy-content a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
    Responsive — Tablet (max 900px)
    ============================================================ */
 @media (max-width: 900px) {
