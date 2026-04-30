@@ -131,13 +131,13 @@ function HomePage() {
             )}
 
             {/* ── Newsletter / Free Story ── */}
-            {authorData.showFreeStory && (
+            {/* {authorData.showFreeStory && (
                 <section className="newsletter-section">
                     <div className="section-inner">
                         <KitSignup />
                     </div>
                 </section>
-            )}
+            )} */}
 
         </div>
     );
