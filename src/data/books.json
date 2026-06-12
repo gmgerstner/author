@@ -23,9 +23,10 @@
         "title": "Sentinel's Return",
         "number": 2,
         "year": "2026",
-        "status": "Coming Soon",
+        "status": "Releasing June 25, 2026",
         "coverImage": "cover-return.jpg",
-        "isAvailable": false,
+        "isAvailable": true,
+        "url": "https://www.amazon.com/dp/B0GY5YFDF7",
         "tagline": "First contact may not be successful. They're going to attempt it anyway.",
         "description": [
           "Nearly one year after a covert mission to Earth ended in tragedy, Antel Ralnar and Becky Miller return with a new team, this time with Becky serving as Mission Leader at the Emperor's request, to validate Earth's readiness and prepare for formal first contact.",

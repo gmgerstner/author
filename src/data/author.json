@@ -20,9 +20,9 @@
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/facebook.svg"
     },
     {
-      "name": "Bookbub",
-      "url": "https://www.bookbub.com/authors/george-m-gerstner?follow=true",
-      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/bookbub.svg"
+      "name": "Reddit",
+      "url": "https://www.reddit.com/user/Western-Telephone259/",
+      "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/reddit.svg"
     },
     {
       "name": "Goodreads",
@@ -33,10 +33,16 @@
       "name": "Instagram",
       "url": "https://www.instagram.com/gmgnovels",
       "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/instagram.svg"
-    },
+    },  
     {
       "name": "Bluesky",
       "url": "https://bsky.app/profile/gmgnovels.bsky.social",
       "icon": "https://unpkg.com/simple-icons@16.12.0/icons/bluesky.svg"
-    }  ]
+    },
+    {
+      "name": "Bookbub",
+      "url": "https://www.bookbub.com/authors/george-m-gerstner?follow=true",
+      "icon": "https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.15.0/bookbub.svg"
+    }
+  ]
 }
