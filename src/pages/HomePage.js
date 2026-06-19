@@ -119,8 +119,19 @@ function HomePage() {
                         <div className="testimonials-list">
                             {testimonialData.testimonials.map(t => (
                                 <blockquote key={t.id} className="testimonial">
-                                    <p className="testimonial-quote">"{t.quote}"</p>
-                                    <footer className="testimonial-author">— {t.author}</footer>
+                                    <div className="testimonial-quote">
+                                        <span className="quote-mark-open">&#8220;</span>
+                                        {t.quote.split('\n').map((para, i, arr) => (
+                                            <p key={i}>
+                                                {para.trim()}
+                                                {i === arr.length - 1 && <span className="quote-mark-close">&#8221;</span>}
+                                            </p>
+                                        ))}
+                                    </div>
+                                    <footer className="testimonial-footer">
+                                        <span className="testimonial-author">— {t.author}</span>
+                                        <span className="testimonial-book-label">{booksData.series.books.find(b => b.id === t.bookid)?.title}</span>
+                                    </footer>
                                 </blockquote>
                             ))}
                         </div>

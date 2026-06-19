@@ -598,6 +598,8 @@ img {
 }
 
 .testimonial-quote {
+  position: relative;
+  padding-left: 1.25em;
   font-size: 1.05rem;
   color: var(--text);
   font-style: italic;
@@ -605,10 +607,56 @@ img {
   margin-bottom: 16px;
 }
 
+.testimonial-quote p {
+  margin: 0 0 0.50em;
+}
+
+.testimonial-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.quote-mark-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 0.8;
+  color: var(--accent);
+  user-select: none;
+}
+
+.quote-mark-close {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 0;
+  vertical-align: -0.35em;
+  margin-left: 2px;
+  color: var(--accent);
+  user-select: none;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .testimonial-author {
   font-size: 0.9rem;
   color: var(--accent);
   letter-spacing: 0.05em;
+}
+
+.testimonial-book-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  padding: 3px 8px;
+  border-radius: var(--radius);
 }
 
 /* ============================================================
