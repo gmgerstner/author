@@ -1,10 +1,12 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import booksData from '../data/books.json';
+import testimonialsData from '../data/testimonials.json';
 
 function BookDetailPage() {
     const { bookId } = useParams();
     const book = booksData.series.books.find(b => b.id === bookId);
     const otherBooks = booksData.series.books.filter(b => b.id !== bookId);
+    const reviews = testimonialsData.testimonials.filter(t => t.bookid === bookId);
 
     if (!book) return <Navigate to="/books" replace />;
 
@@ -68,6 +70,30 @@ function BookDetailPage() {
                     </div>
 
                 </div>
+
+                {reviews.length > 0 && (
+                    <div className="book-reviews">
+                        <h2 className="section-title">Reader Reviews</h2>
+                        <div className="testimonials-list">
+                            {reviews.map(t => (
+                                <blockquote key={t.id} className="testimonial">
+                                    <div className="testimonial-quote">
+                                        <span className="quote-mark-open">&#8220;</span>
+                                        {t.quote.split('\n').map((para, i, arr) => (
+                                            <p key={i}>
+                                                {para.trim()}
+                                                {i === arr.length - 1 && <span className="quote-mark-close">&#8221;</span>}
+                                            </p>
+                                        ))}
+                                    </div>
+                                    <footer className="testimonial-footer">
+                                        <span className="testimonial-author">— {t.author}</span>
+                                    </footer>
+                                </blockquote>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {otherBooks.length > 0 && (
                     <div className="other-books">
