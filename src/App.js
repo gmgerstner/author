@@ -9,6 +9,7 @@ import BookDetailPage from './pages/BookDetailPage';
 import AboutPage from './pages/AboutPage';
 import Contact from './components/Contact';
 import PrivacyPage from './pages/PrivacyPage';
+import KitScrollPopup from './components/KitScrollPopup';
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -138,6 +139,7 @@ function App() {
 
             {/* ── Main Content ── */}
             <ScrollToTop />
+            <KitScrollPopup />
             <main className="site-main">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
