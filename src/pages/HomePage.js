@@ -23,7 +23,7 @@ function HomePage() {
                     <div className="hero-cover">
                         <Link to={`/books/${featuredBook.id}`}>
                             <img
-                                src={`${process.env.PUBLIC_URL}/${featuredBook.coverImage}`}
+                                src={`${process.env.PUBLIC_URL}/sentinel-trilogy-3d.png`}
                                 alt={featuredBook.title}
                                 className="hero-book-img"
                                 onError={(e) => { e.target.style.display = 'none'; }}
