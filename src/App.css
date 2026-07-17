@@ -399,11 +399,14 @@ img {
 
 .hero-cover {
   flex-shrink: 0;
-  width: 280px;
+  width: min(56vw, 640px);
+  max-width: 640px;
 }
 
 .hero-book-img {
   width: 100%;
+  height: auto;
+  display: block;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.7),
     0 0 40px rgba(196, 165, 117, 0.12);
@@ -1307,7 +1310,7 @@ img {
   }
 
   .hero-cover {
-    width: 180px;
+    width: min(100%, 460px);
   }
 
   .hero-ctas {
