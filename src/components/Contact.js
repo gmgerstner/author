@@ -17,6 +17,7 @@ export default function Contact() {
         const data = await response.json();
 
         if (data.success) {
+            window.gtag?.('event', 'generate_lead', { form: 'contact' });
             setResult('Message sent successfully! I\'ll be in touch soon.');
             event.target.reset();
         } else {

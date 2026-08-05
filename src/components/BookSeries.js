@@ -47,6 +47,7 @@ function BookSeries() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="buy-button"
+                                    onClick={() => window.gtag?.('event', 'buy_click', { book_title: book.title })}
                                 >
                                     Buy Now
                                 </a>
@@ -56,6 +57,7 @@ function BookSeries() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="buy-button preorder-button"
+                                    onClick={() => window.gtag?.('event', 'buy_click', { book_title: book.title, preorder: true })}
                                 >
                                     Pre-order
                                 </a>

@@ -27,6 +27,7 @@ function KitSignup() {
                 data-formkit-toggle="ecbfcc2b2f"
                 className="btn btn-primary kit-signup-btn"
                 onClick={() => {
+                    window.gtag?.('event', 'newsletter_open', { source: 'inline_button' });
                     // Fallback: try Kit's JS API directly if data-formkit-toggle isn't intercepted
                     const form = document.querySelector('.formkit-form[data-uid="ecbfcc2b2f"]');
                     if (form) {

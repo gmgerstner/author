@@ -27,6 +27,7 @@ function KitScrollPopup() {
             if (window.scrollY / scrollable >= SCROLL_THRESHOLD) {
                 triggered = true;
                 sessionStorage.setItem(SESSION_KEY, '1');
+                window.gtag?.('event', 'newsletter_open', { source: 'scroll_popup' });
                 setTimeout(() => triggerRef.current?.click(), 300);
             }
         };
