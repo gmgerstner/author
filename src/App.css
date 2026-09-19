@@ -512,17 +512,19 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  box-shadow:
-    0 30px 80px var(--shadow-strong),
-    0 0 40px var(--cover-glow);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* drop-shadow follows the PNG's alpha channel; box-shadow would draw a
+     rectangle behind the transparent artwork */
+  filter:
+    drop-shadow(0 30px 40px var(--shadow-strong))
+    drop-shadow(0 0 20px var(--cover-glow));
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .hero-book-img:hover {
   transform: translateY(-8px) rotate(1deg);
-  box-shadow:
-    0 50px 100px var(--shadow-deep),
-    0 0 60px var(--cover-glow-strong);
+  filter:
+    drop-shadow(0 50px 50px var(--shadow-deep))
+    drop-shadow(0 0 30px var(--cover-glow-strong));
 }
 
 /* ============================================================
