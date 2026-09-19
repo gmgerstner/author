@@ -10,6 +10,8 @@ import AboutPage from './pages/AboutPage';
 import Contact from './components/Contact';
 import PrivacyPage from './pages/PrivacyPage';
 import KitScrollPopup from './components/KitScrollPopup';
+import ThemeToggle from './components/ThemeToggle';
+import useTheme from './hooks/useTheme';
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -20,6 +22,7 @@ function ScrollToTop() {
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [booksDropOpen, setBooksDropOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     const closeMenu = () => setMenuOpen(false);
 
@@ -122,6 +125,9 @@ function App() {
                             </a>
                         ))}
                     </div>
+
+                    {/* Dark / Light Mode */}
+                    <ThemeToggle theme={theme} onToggle={toggleTheme} />
 
                     {/* Hamburger */}
                     <button
