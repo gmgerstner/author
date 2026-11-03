@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 // Web3Forms' shared hCaptcha site key for free plans; Web3Forms verifies the token server-side.
 const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
 
-const HCAPTCHA_SCRIPT = 'https://js.hcaptcha.com/1/api.js?render=explicit';
+// recaptchacompat=off stops hCaptcha adding a g-recaptcha-response field, which Web3Forms treats as (Pro-only) reCaptcha.
+const HCAPTCHA_SCRIPT = 'https://js.hcaptcha.com/1/api.js?render=explicit&recaptchacompat=off';
 
 let hcaptchaLoader;
 function loadHCaptcha() {
@@ -75,6 +76,7 @@ export default function Contact() {
         const formData = new FormData(form);
         formData.append('access_key', '3df89f65-f039-4d24-bc1f-2f2c87f85be4');
         formData.set('h-captcha-response', captchaToken);
+        formData.delete('g-recaptcha-response');
 
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
