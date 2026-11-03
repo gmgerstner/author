@@ -1,27 +1,101 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+// Web3Forms' shared hCaptcha site key for free plans; Web3Forms verifies the token server-side.
+const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
+
+const HCAPTCHA_SCRIPT = 'https://js.hcaptcha.com/1/api.js?render=explicit';
+
+let hcaptchaLoader;
+function loadHCaptcha() {
+    if (window.hcaptcha) return Promise.resolve(window.hcaptcha);
+    if (!hcaptchaLoader) {
+        hcaptchaLoader = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = HCAPTCHA_SCRIPT;
+            script.async = true;
+            script.onload = () => resolve(window.hcaptcha);
+            script.onerror = () => {
+                hcaptchaLoader = null;
+                reject(new Error('hCaptcha failed to load'));
+            };
+            document.head.appendChild(script);
+        });
+    }
+    return hcaptchaLoader;
+}
 
 export default function Contact() {
     const [result, setResult] = useState('');
+    const [captchaToken, setCaptchaToken] = useState('');
+    const captchaRef = useRef(null);
+    const widgetIdRef = useRef(null);
+
+    useEffect(() => {
+        let cancelled = false;
+
+        loadHCaptcha()
+            .then((hcaptcha) => {
+                if (cancelled || !captchaRef.current) return;
+                widgetIdRef.current = hcaptcha.render(captchaRef.current, {
+                    sitekey: HCAPTCHA_SITE_KEY,
+                    theme: document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark',
+                    callback: (token) => setCaptchaToken(token),
+                    'expired-callback': () => setCaptchaToken(''),
+                    'error-callback': () => setCaptchaToken(''),
+                });
+            })
+            .catch(() => {
+                if (!cancelled) setResult('Could not load the captcha. Please refresh the page and try again.');
+            });
+
+        return () => {
+            cancelled = true;
+            if (widgetIdRef.current !== null) {
+                window.hcaptcha?.remove(widgetIdRef.current);
+                widgetIdRef.current = null;
+            }
+        };
+    }, []);
+
+    const resetCaptcha = () => {
+        setCaptchaToken('');
+        if (widgetIdRef.current !== null) window.hcaptcha?.reset(widgetIdRef.current);
+    };
 
     const onSubmit = async (event) => {
         event.preventDefault();
+
+        if (!captchaToken) {
+            setResult('Please complete the captcha check before sending.');
+            return;
+        }
+
         setResult('Sending...');
-        const formData = new FormData(event.target);
+        const form = event.target;
+        const formData = new FormData(form);
         formData.append('access_key', '3df89f65-f039-4d24-bc1f-2f2c87f85be4');
+        formData.set('h-captcha-response', captchaToken);
 
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData,
-        });
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData,
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if (data.success) {
-            window.gtag?.('event', 'generate_lead', { form: 'contact' });
-            setResult('Message sent successfully! I\'ll be in touch soon.');
-            event.target.reset();
-        } else {
-            setResult(data.message || 'Something went wrong. Please try again.');
+            if (data.success) {
+                window.gtag?.('event', 'generate_lead', { form: 'contact' });
+                setResult('Message sent successfully! I\'ll be in touch soon.');
+                form.reset();
+            } else {
+                setResult(data.message || 'Something went wrong. Please try again.');
+            }
+        } catch {
+            setResult('Something went wrong. Please try again.');
+        } finally {
+            // hCaptcha tokens are single-use, so issue a fresh challenge after every attempt.
+            resetCaptcha();
         }
     };
 
@@ -63,8 +137,9 @@ export default function Contact() {
                             <label htmlFor="message">Your Message</label>
                             <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
                         </div>
+                        <div ref={captchaRef} className="captcha-wrap"></div>
                         <div>
-                            <button type="submit" className="btn btn-primary">Send Message</button> <span>(No offers for services)</span>
+                            <button type="submit" className="btn btn-primary" disabled={!captchaToken}>Send Message</button> <span>(No offers for services)</span>
                         </div>
                     </form>
 

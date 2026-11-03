@@ -1229,6 +1229,15 @@ img {
   min-height: 140px;
 }
 
+.captcha-wrap {
+  min-height: 65px;
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .form-result {
   padding: 14px 18px;
   border-radius: var(--radius);
