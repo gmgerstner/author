@@ -9,6 +9,7 @@ import BookDetailPage from './pages/BookDetailPage';
 import AboutPage from './pages/AboutPage';
 import Contact from './components/Contact';
 import PrivacyPage from './pages/PrivacyPage';
+import AuthorSubmitPage from './pages/AuthorSubmitPage';
 import KitScrollPopup from './components/KitScrollPopup';
 import ThemeToggle from './components/ThemeToggle';
 import useTheme from './hooks/useTheme';
@@ -154,6 +155,8 @@ function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<PrivacyPage />} />
+                    {/* Unlisted: not linked from nav or footer. */}
+                    <Route path="/author-submit-k7m2" element={<AuthorSubmitPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>
