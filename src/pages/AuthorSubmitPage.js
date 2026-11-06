@@ -367,7 +367,11 @@ export default function AuthorSubmitPage() {
                                 required
                             />
                             <p id="epub-hint" className="form-hint">
-                                Don't have an EPUB yet? You can use e-booka to create one from your manuscript.
+                                Don't have an EPUB yet? You can use{' '}
+                                <a href="https://e-booka.online/" target="_blank" rel="noopener noreferrer">
+                                    E-BOOKA
+                                </a>{' '}
+                                (free, runs in your browser) to create one from your manuscript.
                             </p>
                         </div>
 

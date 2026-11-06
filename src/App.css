@@ -1325,6 +1325,11 @@ img {
   margin: 0;
 }
 
+.form-hint a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .hp-field {
   position: absolute;
   left: -10000px;
