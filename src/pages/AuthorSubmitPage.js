@@ -363,8 +363,12 @@ export default function AuthorSubmitPage() {
                                 id="epub"
                                 name="epub"
                                 accept=".epub,application/epub+zip"
+                                aria-describedby="epub-hint"
                                 required
                             />
+                            <p id="epub-hint" className="form-hint">
+                                Don't have an EPUB yet? You can use e-booka to create one from your manuscript.
+                            </p>
                         </div>
 
                         <div className="form-group">

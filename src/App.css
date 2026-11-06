@@ -1291,8 +1291,14 @@ img {
   cursor: pointer;
   color: var(--text);
   font-size: 0.95rem;
+}
+
+/* Beat the more specific `.form-group label` style so genre names read normally. */
+.genre-fieldset .genre-option {
+  font-size: 0.95rem;
   letter-spacing: normal;
   text-transform: none;
+  color: var(--text);
 }
 
 .genre-option input,
@@ -1310,6 +1316,13 @@ img {
 
 .form-group input[type="file"] {
   cursor: pointer;
+}
+
+.form-hint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .hp-field {
