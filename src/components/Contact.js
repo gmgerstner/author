@@ -1,29 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { loadHCaptcha } from '../utils/hcaptcha';
 
 // Web3Forms' shared hCaptcha site key for free plans; Web3Forms verifies the token server-side.
 const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
-
-// recaptchacompat=off stops hCaptcha adding a g-recaptcha-response field, which Web3Forms treats as (Pro-only) reCaptcha.
-const HCAPTCHA_SCRIPT = 'https://js.hcaptcha.com/1/api.js?render=explicit&recaptchacompat=off';
-
-let hcaptchaLoader;
-function loadHCaptcha() {
-    if (window.hcaptcha) return Promise.resolve(window.hcaptcha);
-    if (!hcaptchaLoader) {
-        hcaptchaLoader = new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = HCAPTCHA_SCRIPT;
-            script.async = true;
-            script.onload = () => resolve(window.hcaptcha);
-            script.onerror = () => {
-                hcaptchaLoader = null;
-                reject(new Error('hCaptcha failed to load'));
-            };
-            document.head.appendChild(script);
-        });
-    }
-    return hcaptchaLoader;
-}
 
 export default function Contact() {
     const [result, setResult] = useState('');

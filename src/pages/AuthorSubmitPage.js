@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { loadHCaptcha } from '../utils/hcaptcha';
 import {
+    HCAPTCHA_SITE_KEY,
     SUPABASE_URL,
     SUPABASE_ANON_KEY,
     SUBMISSIONS_BUCKET,
@@ -45,13 +47,42 @@ function safeFileName(name) {
     return `${slugify(base, 'book')}.epub`;
 }
 
-async function uploadToStorage(path, body, contentType) {
+async function readError(response, prefix) {
+    try {
+        const data = await response.json();
+        const detail = data?.message || data?.msg || data?.error_description || data?.error;
+        if (detail) return `${prefix}: ${detail}`;
+    } catch {
+        /* response had no JSON body */
+    }
+    return `${prefix} (${response.status}).`;
+}
+
+// Supabase verifies the hCaptcha token server-side, then issues a short-lived
+// anonymous session. Only those sessions are allowed to upload by the Storage policy.
+async function signInWithCaptcha(captchaToken) {
+    const response = await fetch(`${SUPABASE_URL}/auth/v1/signup`, {
+        method: 'POST',
+        headers: {
+            apikey: SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: {}, gotrue_meta_security: { captcha_token: captchaToken } }),
+    });
+    if (!response.ok) throw new Error(await readError(response, 'Captcha check failed'));
+    const data = await response.json();
+    const accessToken = data.access_token || data.session?.access_token;
+    if (!accessToken) throw new Error('Captcha check failed: no session returned.');
+    return accessToken;
+}
+
+async function uploadToStorage(path, body, contentType, accessToken) {
     const url = `${SUPABASE_URL}/storage/v1/object/${SUBMISSIONS_BUCKET}/${path}`;
     const response = await fetch(url, {
         method: 'POST',
         headers: {
             apikey: SUPABASE_ANON_KEY,
-            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            Authorization: `Bearer ${accessToken}`,
             'Content-Type': contentType,
             'x-upsert': 'false',
             'cache-control': '3600',
@@ -59,16 +90,7 @@ async function uploadToStorage(path, body, contentType) {
         body,
     });
 
-    if (!response.ok) {
-        let message = `Upload failed (${response.status}).`;
-        try {
-            const data = await response.json();
-            if (data?.message) message = `Upload failed: ${data.message}`;
-        } catch {
-            /* response had no JSON body */
-        }
-        throw new Error(message);
-    }
+    if (!response.ok) throw new Error(await readError(response, 'Upload failed'));
 }
 
 function buildInfoText(fields, genres, epubPath, submittedAt) {
@@ -108,6 +130,44 @@ export default function AuthorSubmitPage() {
     const [genres, setGenres] = useState([]);
     const [status, setStatus] = useState({ type: '', message: '' });
     const [submitting, setSubmitting] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState('');
+    const captchaRef = useRef(null);
+    const widgetIdRef = useRef(null);
+
+    useEffect(() => {
+        if (!isSupabaseConfigured()) return undefined;
+        let cancelled = false;
+
+        loadHCaptcha()
+            .then((hcaptcha) => {
+                if (cancelled || !captchaRef.current) return;
+                widgetIdRef.current = hcaptcha.render(captchaRef.current, {
+                    sitekey: HCAPTCHA_SITE_KEY,
+                    theme: document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark',
+                    callback: (token) => setCaptchaToken(token),
+                    'expired-callback': () => setCaptchaToken(''),
+                    'error-callback': () => setCaptchaToken(''),
+                });
+            })
+            .catch(() => {
+                if (!cancelled) {
+                    setStatus({ type: 'error', message: 'Could not load the captcha. Please refresh the page and try again.' });
+                }
+            });
+
+        return () => {
+            cancelled = true;
+            if (widgetIdRef.current !== null) {
+                window.hcaptcha?.remove(widgetIdRef.current);
+                widgetIdRef.current = null;
+            }
+        };
+    }, []);
+
+    const resetCaptcha = () => {
+        setCaptchaToken('');
+        if (widgetIdRef.current !== null) window.hcaptcha?.reset(widgetIdRef.current);
+    };
 
     // Keep this unlisted page out of search engines.
     useEffect(() => {
@@ -144,6 +204,11 @@ export default function AuthorSubmitPage() {
 
         if (!isSupabaseConfigured()) {
             setStatus({ type: 'error', message: 'Submissions are not configured yet. Please check back soon.' });
+            return;
+        }
+
+        if (!captchaToken) {
+            setStatus({ type: 'error', message: 'Please complete the captcha check before submitting.' });
             return;
         }
 
@@ -192,10 +257,11 @@ export default function AuthorSubmitPage() {
         setStatus({ type: 'info', message: 'Uploading your book… please keep this page open.' });
 
         try {
+            const accessToken = await signInWithCaptcha(captchaToken);
             // Upload the EPUB first so an info file only exists for complete submissions.
-            await uploadToStorage(epubPath, epub, 'application/epub+zip');
+            await uploadToStorage(epubPath, epub, 'application/epub+zip', accessToken);
             const info = buildInfoText(fields, allGenres, epubName, submittedAt);
-            await uploadToStorage(`${folder}/info.txt`, new Blob([info], { type: 'text/plain' }), 'text/plain');
+            await uploadToStorage(`${folder}/info.txt`, new Blob([info], { type: 'text/plain' }), 'text/plain', accessToken);
 
             window.gtag?.('event', 'author_submission', { form: 'author-submit' });
             setStatus({ type: 'success', message: 'Thank you! Your book was submitted successfully.' });
@@ -208,6 +274,8 @@ export default function AuthorSubmitPage() {
             });
         } finally {
             setSubmitting(false);
+            // hCaptcha tokens are single-use, so issue a fresh challenge after every attempt.
+            resetCaptcha();
         }
     };
 
@@ -315,8 +383,10 @@ export default function AuthorSubmitPage() {
                             <span>I am the author or rights holder and I have permission to share this book. *</span>
                         </label>
 
+                        <div ref={captchaRef} className="captcha-wrap"></div>
+
                         <div>
-                            <button type="submit" className="btn btn-primary" disabled={submitting}>
+                            <button type="submit" className="btn btn-primary" disabled={submitting || !captchaToken}>
                                 {submitting ? 'Uploading…' : 'Submit Book'}
                             </button>
                         </div>
