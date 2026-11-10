@@ -1,12 +1,14 @@
 {
   "testimonials": [
     {
-      "id": "hyppolite-1",
+      "id": "rhoads-1",
       "bookid": "sentinels-dilemma",
       "quote": [
-        "This book is truly amazing. The story is filled with mystery, drawing you in, allowing you to connect deeply with each individual as they evolve throughout the story. The main character is excellent also, and the author keeps you engaged in every chapter. I really love the book! Great work!"
+        "Sentinel's Dilemma offers an interesting twist on the familiar alien-contact premise. Instead of an invading fleet announcing itself to Earth, the author imagines an advanced civilization quietly studying humanity before deciding whether and how to establish contact.",
+        "The tension between military duty and personal relationships is done brilliantly. Antel's growing affection for Becky complicates his responsibilities and raises questions about loyalty, secrecy, and the consequences of becoming personally involved with the people he has been sent to observe.",
+        "I really enjoyed the character building, technological detail, action, and mystery! If you enjoy either romantic science-fiction or military thrillers (or a combination of both), this book is for you!"
       ],
-      "author": "Nedjyna Hyppolite",
+      "author": "Chad Rhoads",
       "type": "review"
     },
     {
@@ -35,14 +37,12 @@
       "type": "review"
     },
     {
-      "id": "amazon-1",
+      "id": "hyppolite-1",
       "bookid": "sentinels-dilemma",
       "quote": [
-        "Sentinel's Dilemma offers an interesting twist on the familiar alien-contact premise. Instead of an invading fleet announcing itself to Earth, the author imagines an advanced civilization quietly studying humanity before deciding whether and how to establish contact.",
-        "The tension between military duty and personal relationships is done brilliantly. Antel's growing affection for Becky complicates his responsibilities and raises questions about loyalty, secrecy, and the consequences of becoming personally involved with the people he has been sent to observe.",
-        "I really enjoyed the character building, technological detail, action, and mystery! If you enjoy either romantic science-fiction or military thrillers (or a combination of both), this book is for you!"
+        "This book is truly amazing. The story is filled with mystery, drawing you in, allowing you to connect deeply with each individual as they evolve throughout the story. The main character is excellent also, and the author keeps you engaged in every chapter. I really love the book! Great work!"
       ],
-      "author": "Amazon Customer",
+      "author": "Nedjyna Hyppolite",
       "type": "review"
     }
   ]
