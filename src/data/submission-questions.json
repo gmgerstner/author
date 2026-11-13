@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": "isscifi",
+      "label": "Is your book science fiction?",
+      "text": "Is your book science fiction?",
+      "type": "single",
+      "required": true,
+      "allowOther": false,
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "isfantasy",
+      "label": "Is your book fantasy?",
+      "text": "Is your book fantasy?",
+      "type": "single",
+      "required": true,
+      "allowOther": false,
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "hasromance",
+      "label": "Has Romance",
+      "text": "Does your book include a romance element?",
+      "type": "single",
+      "required": true,
+      "allowOther": false,
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "audience",
+      "label": "Audience",
+      "text": "Who is the book written for?",
+      "type": "single",
+      "required": true,
+      "allowOther": true,
+      "answers": [
+        "Adult",
+        "Young Adult"
+      ]
+    },
+    {
+      "id": "readmine",
+      "label": "Read Mine",
+      "text": "Have you read Sentinel's Dilemma or any other of my books?",
+      "type": "single",
+      "required": true,
+      "allowOther": false,
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    }
+  ]
+}

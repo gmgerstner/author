@@ -1,0 +1,26 @@
+{
+  "open": true,
+  "closedMessage": "Submissions are closed for now while I catch up on my reading list. Please check back later.",
+
+  "supabaseUrl": "https://zgifdvlhoutyzrujwvln.supabase.co",
+  "supabasePublishableKey": "sb_publishable_bXghcE0KnTpSdODmvGsL6w_mRf6aWys",
+  "captchaProvider": "turnstile",
+  "captchaSiteKey": "0x4AAAAAAF-_J-G5EH6hnVXQ",
+  "bucket": "ebooks",
+  "table": "submissions",
+  "maxFileSizeMb": 50,
+
+  "intro": "I enjoy reading and reviewing books by fellow authors. If you'd like me to consider yours, tell me a little about it and upload the EPUB below.",
+  "openTo": [
+    "Science fiction is my first choice: space opera, first contact, military, near-future",
+    "A romance B-story is a bonus. For romance, I prefer male/female pairings, especially in the male's point of view",
+    "Fantasy with strong worldbuilding",
+    "Novels, published or not yet released"
+  ],
+  "notAFit": [
+    "Erotica or explicit content",
+    "Horror",
+    "Poetry, picture books and non-fiction",
+    "Unfinished drafts"
+  ]
+}

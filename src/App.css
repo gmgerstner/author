@@ -1259,6 +1259,159 @@ img {
 }
 
 /* ============================================================
+   Book Submission Page
+   ============================================================ */
+.submit-about {
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.submit-about h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 30px 0 10px;
+}
+
+.submit-about p,
+.submit-about li {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.submit-about ul {
+  padding-left: 20px;
+}
+
+.submit-about a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.submit-about a:hover {
+  text-decoration: underline;
+}
+
+.form-group select,
+.form-group input[type='file'],
+.submit-other {
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  min-width: 0;
+}
+
+.form-group select:focus,
+.submit-other:focus {
+  border-color: var(--accent);
+}
+
+.submit-question {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+  min-width: 0;
+}
+
+.submit-question legend {
+  padding: 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.submit-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.submit-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.submit-option input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.submit-other {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.submit-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.field-error {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.field-error::before {
+  content: '\26A0\00A0';
+}
+
+.has-error label,
+.has-error legend {
+  color: var(--danger);
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea,
+.submit-question.has-error {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.submit-question .field-error {
+  margin-bottom: 12px;
+}
+
+.submit-check.has-error {
+  padding: 12px 14px;
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
+  background: var(--danger-soft);
+}
+
+.submit-check.has-error .submit-option {
+  color: var(--text);
+}
+
+.submit-check .field-error {
+  margin-top: 8px;
+}
+
+.submit-closed {
+  max-width: 680px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.submit-done {
+  max-width: 680px;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .site-footer {
