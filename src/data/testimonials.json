@@ -1,24 +1,48 @@
 {
   "testimonials": [
     {
-      "id": "hyppolite-1",
+      "id": "rhoads-1",
       "bookid": "sentinels-dilemma",
-      "quote": "This book is truly amazing. The story is filled with mystery, drawing you in, allowing you to connect deeply with each individual as they evolve throughout the story. The main character is excellent also, and the author keeps you engaged in every chapter. I really love the book! Great work!",
-      "author": "Nedjyna Hyppolite",
+      "quote": [
+        "Sentinel's Dilemma offers an interesting twist on the familiar alien-contact premise. Instead of an invading fleet announcing itself to Earth, the author imagines an advanced civilization quietly studying humanity before deciding whether and how to establish contact.",
+        "The tension between military duty and personal relationships is done brilliantly. Antel's growing affection for Becky complicates his responsibilities and raises questions about loyalty, secrecy, and the consequences of becoming personally involved with the people he has been sent to observe.",
+        "I really enjoyed the character building, technological detail, action, and mystery! If you enjoy either romantic science-fiction or military thrillers (or a combination of both), this book is for you!"
+      ],
+      "author": "Chad Rhoads",
       "type": "review"
     },
     {
       "id": "parry-1",
       "bookid": "sentinels-dilemma",
-      "quote": "\"Oh my universe\" - What a great debut.\n This novel sets a wide stage for what is sure to be a jam packed series full of heart and adventure. Every page bursts with detail as the story focuses on layering a solid foundation, that establishes a rich and textured lore, whilst giving you a heartfelt story told from an alien perspective. It's unique and interesting to experience our planet from an otherworldly perspective.\n The book is a great debut from the author and well worth a read and I look forward to the next ones in the series.",
+      "quote": [
+        "\"Oh my universe\" - What a great debut.",
+        "This novel sets a wide stage for what is sure to be a jam packed series full of heart and adventure. Every page bursts with detail as the story focuses on layering a solid foundation, that establishes a rich and textured lore, whilst giving you a heartfelt story told from an alien perspective. It's unique and interesting to experience our planet from an otherworldly perspective.",
+        "The book is a great debut from the author and well worth a read and I look forward to the next ones in the series."
+      ],
       "author": "Allan Parry",
       "type": "review"
     },
     {
       "id": "parry-2",
       "bookid": "sentinels-return",
-      "quote": "A triumphant return!\nThis 2nd foray into George's world has been a delight to read. The writing is confident, fast-moving, and thrilling, and I found myself genuinely invested in where the story was heading.\nThe book pulls on the threads established from the first book and tells its story through parallel plots. One thread follows the human military response to an alien encounter, the other the alien team navigating their way to Earth. The two threads mostly payoff when they converge, and the final parts of the story deliver some good tension.\nThe cast is large, and not every character gets the depth they deserve, but Antel, Becky, and the morally conflicted Neil Morris carry the emotional weight well enough to keep you turning pages.\nIf you enjoy military fiction mixed with sci-fi, and a bit of romance woven in, then you'll enjoy this book.\nOverall this is a strong sequel that leaves you curious about what comes next.",
+      "quote": [
+        "A triumphant return!",
+        "This 2nd foray into George's world has been a delight to read. The writing is confident, fast-moving, and thrilling, and I found myself genuinely invested in where the story was heading.",
+        "The book pulls on the threads established from the first book and tells its story through parallel plots. One thread follows the human military response to an alien encounter, the other the alien team navigating their way to Earth. The two threads mostly payoff when they converge, and the final parts of the story deliver some good tension.",
+        "The cast is large, and not every character gets the depth they deserve, but Antel, Becky, and the morally conflicted Neil Morris carry the emotional weight well enough to keep you turning pages.",
+        "If you enjoy military fiction mixed with sci-fi, and a bit of romance woven in, then you'll enjoy this book.",
+        "Overall this is a strong sequel that leaves you curious about what comes next."
+      ],
       "author": "Allan Parry",
+      "type": "review"
+    },
+    {
+      "id": "hyppolite-1",
+      "bookid": "sentinels-dilemma",
+      "quote": [
+        "This book is truly amazing. The story is filled with mystery, drawing you in, allowing you to connect deeply with each individual as they evolve throughout the story. The main character is excellent also, and the author keeps you engaged in every chapter. I really love the book! Great work!"
+      ],
+      "author": "Nedjyna Hyppolite",
       "type": "review"
     }
   ]

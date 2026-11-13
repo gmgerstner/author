@@ -79,7 +79,7 @@ function BookDetailPage() {
                                 <blockquote key={t.id} className="testimonial">
                                     <div className="testimonial-quote">
                                         <span className="quote-mark-open">&#8220;</span>
-                                        {t.quote.split('\n').map((para, i, arr) => (
+                                        {(Array.isArray(t.quote) ? t.quote : t.quote.split('\n')).map((para, i, arr) => (
                                             <p key={i}>
                                                 {para.trim()}
                                                 {i === arr.length - 1 && <span className="quote-mark-close">&#8221;</span>}
